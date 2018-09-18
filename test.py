@@ -6,6 +6,6 @@ Created on Mon Sep 17 02:53:53 2018
 @author: vnoelifant
 """
 
-import light_puzzler_fin
+import Light_Puzzler
 
-light_puzzler_fin.main()
+Light_Puzzler.main()
