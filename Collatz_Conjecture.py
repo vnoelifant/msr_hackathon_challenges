@@ -47,5 +47,5 @@ def collatz(n):
     #print(n)
     return(n)
     
-#if __name__ == '__main__': 
-#main()
+if __name__ == '__main__': 
+    main()
