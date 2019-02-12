@@ -38,7 +38,7 @@ xDim = 100
 yDim = 100
 
 # Create the number of nodes (iterations)
-numNodes = 45
+numNodes = 40
 
 # Create the incrememntal distance
 deltaQ = 1
@@ -52,16 +52,31 @@ def getEuclidDistance(pt1,pt2):
 # function to get point nearest to qRand
 def nearestPoint(qRand, nodes):
     minDistance = 0
+    #print(nodes)
+    print(nodes)
+    print("qRand: ", qRand)
     for pt in nodes:
         dist = getEuclidDistance(qRand,pt)
         if (dist < minDistance) or minDistance == 0:
             minDistance = dist
             qNear = pt
+    print("qNear: ",qNear)
     return qNear
 
             
 def getSteeringDistance(qRand, qNear):
+    print(getEuclidDistance(qRand,qNear))
+    #if getEuclidDistance(qRand,qNear) < deltaQ:
+        #return qRand
+    #else:
+        
+        #vect = (qRand - qNear)/getEuclidDistance(qRand,qNear)
+        #print(vect)
+        #print(qNear + vect*deltaQ)
+        #return qNear + vect*deltaQ 
     vect = (qRand - qNear)/getEuclidDistance(qRand,qNear)
+    print(vect)
+    print(qNear + (vect)* deltaQ * getEuclidDistance(qRand,qNear)) 
     return qNear + (vect)* deltaQ * getEuclidDistance(qRand,qNear) 
 
 def main():
@@ -76,7 +91,7 @@ def main():
     verts = []
     codes = []
     
-    for i in range(numNodes):
+    for node in range(numNodes):
         qRand = np.array([random.randint(0, xDim), random.randint(0, yDim)])
         #print(qRand)
         # get qNear from a the nodes list
@@ -100,6 +115,8 @@ def main():
     ax.set_xlim([0,xDim])
     ax.set_ylim([0,yDim])
     mp.show()
+    #print(qNew)
+    print(nodes)
 
 if __name__ == '__main__':
     main()
