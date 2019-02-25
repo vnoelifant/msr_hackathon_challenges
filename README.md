@@ -1,7 +1,7 @@
 # my_projects
 ## MSR Hackaton Projects
 
-This repository contains Python challenge programs created for the MSR (Masters in Science in Robotics) Hackathon experience over a course of three days. The purpose of this challenge was not only to enhance skills in Python by solving challenging problems, but also to practice use in Git to prepare for an excing year in the MSR program. A brief description of each challenge and the developed code is shown below:
+This repository contains Python challenge programs created for the MSR (Masters in Science in Robotics) Hackathon experience over a course of three days. The purpose of this challenge was not only to enhance skills in Python by solving challenging problems, but also to practice use in Git to prepare for an exciting year in the MSR program. A brief description of each challenge and the developed code is shown below:
 
 ### **Challenge 1**:
  * The instructions for this challenge are outlined [here](http://robotics.mech.northwestern.edu/~jarvis/hackathon_2018_site/public/docs/challenge1.pdf). In summary, a Python program is to be written to return a message indicating number of lights on following a series of events for which two people either turn on/off a series of lights. See the [Light Puzzler](https://github.com/vnoelifant/my_projects/blob/master/Light_Puzzler.py) code which outputs a message indicating the number of lights and demonstrates ability to run program in the command line. 
