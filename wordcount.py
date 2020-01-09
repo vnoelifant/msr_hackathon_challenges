@@ -41,6 +41,8 @@ import re
 from collections import defaultdict
 from collections import Counter
 import string
+
+
 # +++your code here+++
 # Define print_words(filename) and print_top(filename) functions.
 # You could write a helper utility function that reads a file
@@ -49,60 +51,52 @@ import string
 
 # Note: text file is found here: http://robotics.mech.northwestern.edu/~jarvis/alice.txt
 
-# finction to return the word count
+# function to return the word count
 def get_data(filename):
     word_count = defaultdict(int)
-
-        
-    with open(filename,'r') as inFile:
+    with open(filename, 'r') as inFile:
         for line in inFile:
             line = line.lower()
             word_list = line.split()
             for word in word_list:
                 word_count[word] += 1
-                #word_count[word] = count
         return word_count
 
 # print word count of words
 def print_words(filename):
-    outFile = open('alice_output.txt', 'w') 
-    for word,count in sorted(get_data(filename).items()):
+    outFile = open('alice_output.txt', 'w')
+    for word, count in sorted(get_data(filename).items()):
         print(word, count)
-        outFile.write("{} {}\n".format(word,count))
+        outFile.write("{} {}\n".format(word, count))
 
-# print sorted list of 20 most used words       
+# print sorted list of 20 most used words
 def print_top(filename):
-    words = sorted(get_data(filename), key = get_data(filename).get, reverse = True)
-   # words = sorted(get_data(filename).items(), key = lambda x: x[1], reverse = True)
-   # print(words)
+    words = sorted(get_data(filename), key=get_data(filename).get, reverse=True)
     for commWord in words[:20]:
         print(commWord, get_data(filename)[commWord])
-    #for commWord, count in words[:20]:
-        #print(commWord, count)
-        
-        
-###
 
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.
 def main():
-    #if len(sys.argv) != 3:
-        #print('usage: ./wordcount.py {--count | --topcount} file')
-        #sys.exit(1)
+    # if len(sys.argv) != 3:
+    # print('usage: ./wordcount.py {--count | --topcount} file')
+    # sys.exit(1)
 
-    #option = sys.argv[1]
-    #filename = sys.argv[2]
-    filename = '/home/vnoelifant/alice.txt'
+    # option = sys.argv[1]
+    # filename = sys.argv[2]
+    filename = 'alice.txt'
+    print("Printing the word counts:")
     print_words(filename)
+    print('\n')
+    print("Printing the top words:")
     print_top(filename)
-    #if option == '--count':
-        #print_words(filename)
-    #elif option == '--topcount':
-        #print_top(filename)
-    #else:
-        #print('unknown option: ' + option)
-        #sys.exit(1)
-
+    # if option == '--count':
+    # print_words(filename)
+    # elif option == '--topcount':
+    # print_top(filename)
+    # else:
+    # print('unknown option: ' + option)
+    # sys.exit(1)
 if __name__ == '__main__':
     main()
 
